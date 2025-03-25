@@ -1,0 +1,70 @@
+/* Centraliza o contêiner na tela */
+body {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    height: 100vh;           /* Garante que o body ocupe toda a altura da tela */
+    background: lightgrey;   /* Cor de fundo */
+    font-family: Verdana, sans-serif; /* Fonte do corpo */
+    line-height: 1.6;
+}
+
+/* Ajusta a aparência do contêiner principal */
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para os botões de navegação */
+.container-buttons {
+    display: flex;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-bottom: 20px; /* Espaçamento adicional entre os botões e o conteúdo abaixo */
+}
+
+/* Estilo para os botões */
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse no botão */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo do cabeçalho */
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+/* Estilo do subtítulo (h2) */
+h2 {
+    color: #333;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Estilo dos parágrafos e listas */
+p, ul {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}

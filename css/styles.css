@@ -7,53 +7,40 @@
 
 /* Corpo do documento */
 body {
-    background: lightgrey; /* Cor de fundo */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    height: 100vh;           /* Garante que o body ocupe toda a altura da tela */
+    background: lightgrey;   /* Cor de fundo */
     font-family: Verdana, sans-serif; /* Fonte do corpo */
+    line-height: 1.6;
 }
 
-/* Cabeçalho do formulário */
-h1 {
-    text-align: center;
-    color: blue; /* Cor do texto do cabeçalho */
-}
-
-/* Estilo dos labels */
-label {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 8px;
-    display: block;
-}
-
-/* Estilo dos inputs */
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/* Contêiner principal do formulário */
+/* Estilo do contêiner principal */
 .container {
     width: 100%;
     max-width: 600px;
-    margin: 0 auto;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Botões principais */
+/* Contêiner para os botões */
+.container-buttons {
+    display: flex;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-bottom: 20px; /* Espaçamento adicional entre os botões e o conteúdo abaixo */
+}
+
+/* Estilo para os botões */
 button {
-    width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -64,16 +51,28 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Estilo do botão de navegação */
-#navigateBtn {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
+/* Estilo do cabeçalho */
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+/* Estilo dos labels */
+label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Estilo dos inputs e textarea */
+input, textarea {
+    width: 100%;
     padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 /* Estilo do texto de lista */
@@ -82,3 +81,5 @@ h6 {
     font-size: 16px;
     margin-top: 20px;
 }
+
+
