@@ -1,61 +1,58 @@
-```md
 # Projeto EAD-05-Vinicius: Refatoração de Código
 
 ## Descrição do Projeto
 
-Este projeto consiste na refatoração de um código legado, com o objetivo de tornar o sistema mais organizado, eficiente e sustentável. A refatoração foi realizada para corrigir problemas de débito técnico e modernizar o sistema, facilitando a manutenção, a escalabilidade e a experiência do usuário.
+Este projeto consiste na refatoração de um código legado, com o objetivo de tornar o sistema mais organizado, eficiente e sustentável. Foram identificados diversos problemas técnicos e de usabilidade na versão original (branch **main**), e as melhorias implementadas na versão refatorada (branch **beta**) visam corrigir esses problemas.
 
 ## Objetivos da Refatoração
 
-O código original apresentava diversos problemas que comprometiam sua qualidade, dentre eles:
-
+O código original apresentava os seguintes problemas:
 - Uso excessivo de estilos inline e internos.
 - Código duplicado e de difícil manutenção.
-- Layout quebrado e desalinhado com padrões modernos de UI/UX.
+- Layout desalinhado com os padrões modernos de UI/UX.
 - Falta de boas práticas de acessibilidade.
 - Código JavaScript pouco modular e com validações ineficazes.
 - Ausência de padrões consistentes de nomenclatura.
 
-Com a refatoração, os principais objetivos foram:
-
-1. **Melhoria na organização do código** – Remoção de duplicações e centralização dos estilos e scripts.
-2. **Aderência aos princípios de Clean Code** – Estruturação modular, clareza e consistência na nomenclatura.
-3. **Aprimoramento do Layout** – Criação de uma interface responsiva, alinhada com padrões modernos de design e usabilidade.
+Os principais objetivos da refatoração foram:
+1. **Melhoria na Organização do Código** – Remoção de duplicações e centralização dos estilos e scripts.
+2. **Aderência aos Princípios de Clean Code** – Estruturação modular, clareza e consistência na nomenclatura.
+3. **Aprimoramento do Layout** – Criação de uma interface responsiva e alinhada com padrões modernos de design.
 4. **Validações e Funcionalidades** – Implementação de validações robustas e correção de funcionalidades críticas.
 5. **Acessibilidade** – Inclusão de boas práticas para garantir que o sistema seja acessível a todos os usuários.
 
-## 🗂 Estrutura de Pastas do Projeto
+## Estrutura de Pastas do Projeto
+
+A estrutura atual do projeto é a seguinte:
 
 ```
-/assets
-  /css
-    styles.css
-  /img
-    (diretório vazio para futuras imagens)
-  /js
-    contato.js
-    home.js
-    script.js
-  /paginas
-    cadastro.html
-    contato.html
-    sobre.html
-    index.html
-README.md
+
+├── css
+    ├── sobre.css
+    └── styles.css
+├── js
+    └── script.js
+├── index.html
+└── paginas
+    ├── contato.html
+    └── sobre.html
+├── README.md
 ```
+
+> **Observação:** A estrutura de pastas foi ajustada para refletir a organização necessária para manter os estilos, scripts e páginas separadamente, facilitando a manutenção e a escalabilidade do sistema.
 
 ## Comparação Entre Branches
 
 ### Branch **main**
 
 - **Contexto:**  
-  Código legado com diversas inconsistências e débito técnico.
+  Código legado com vários problemas de organização e manutenção.
 - **Principais Problemas:**
-  - Estilos inline e internos dispersos pelo HTML.
-  - Código duplicado e de difícil manutenção.
-  - Layout desalinhado com as boas práticas de UI/UX.
-  - Falta de acessibilidade e usabilidade para pessoas com necessidades especiais.
-  - JavaScript pouco modular, com funções repetitivas e validações ineficazes.
+  - Estilos inline e internos espalhados no HTML.
+  - Código duplicado e redundante.
+  - Layout desalinhado e fora dos padrões modernos de UI/UX.
+  - Falta de práticas de acessibilidade.
+  - JavaScript pouco modular e com validações ineficazes.
 
 ### Branch **beta**
 
@@ -63,88 +60,63 @@ README.md
   Versão refatorada que implementa melhorias para corrigir os problemas identificados.
 - **Melhorias Implementadas:**
   - **Organização dos Estilos:**  
-    Todos os estilos foram movidos para arquivos CSS externos, garantindo centralização e facilidade de manutenção.
+    Todos os estilos foram migrados para arquivos CSS externos, centralizando a aparência visual.
   - **Modularização do Código:**  
-    O JavaScript foi reorganizado em funções e módulos claros, eliminando duplicações e facilitando futuras alterações.
+    O JavaScript foi organizado em módulos e funções específicas, eliminando duplicações.
   - **Aprimoramento do Layout:**  
-    O layout foi redesenhado para atender aos padrões modernos de UI/UX, proporcionando uma interface responsiva e intuitiva.
+    O layout foi redesenhado para se adequar aos padrões modernos de UI/UX, garantindo responsividade.
   - **Validações Robústas:**  
-    Implementação de validações eficientes, principalmente em formulários, com feedback visual adequado ao usuário.
+    Foram implementadas validações eficazes em formulários, com feedback visual para o usuário.
   - **Acessibilidade:**  
-    Inclusão de práticas de acessibilidade, como o uso correto de tags semânticas, `label` nos formulários, e navegação facilitada por teclado.
+    Melhorias na utilização de tags semânticas, `label` nos formulários e atributos ARIA, promovendo uma navegação mais inclusiva.
   - **Padrões de Nomenclatura:**  
-    Adoção de convenções que melhoram a legibilidade e a consistência do código.
+    Adoção de convenções que facilitam a leitura e a manutenção do código.
 
 ## Mudanças Realizadas
 
 ### 1. Remoção de Estilos Inline e Internos
 - **Problema:**  
-  A utilização excessiva de estilos diretamente no HTML dificultava a manutenção e a atualização visual do sistema.
+  Estilos aplicados diretamente no HTML dificultavam a manutenção.
 - **Solução:**  
-  Transferência completa dos estilos para o arquivo `styles.css`, organizando-os de forma modular.
+  Centralizamos todos os estilos no arquivo `styles.css`, permitindo uma gestão mais simples e organizada do design.
 
 ### 2. Modularização do JavaScript
 - **Problema:**  
-  Código JavaScript disperso e duplicado, o que complicava a manutenção e a escalabilidade.
+  Código JavaScript disperso, com funções duplicadas e pouca organização.
 - **Solução:**  
-  Centralização das funções em um único arquivo (ou módulos separados) e eliminação de redundâncias, facilitando a manutenção e os testes.
+  Unificamos a lógica em módulos e arquivos específicos (como `script.js`, `home.js` e `contato.js`), facilitando a manutenção e a escalabilidade.
 
 ### 3. Validação de Formulários
 - **Problema:**  
-  Validações ineficazes que permitiam a inserção de dados malformados, especialmente no campo de e-mail.
+  Validações insuficientes que permitiam a inserção de dados malformados.
 - **Solução:**  
-  Implementação de expressões regulares para validar os formulários e feedback visual que informa ao usuário sobre o sucesso ou erro na inserção dos dados.
+  Implementamos expressões regulares e feedback visual para validar corretamente os formulários, garantindo a integridade dos dados.
 
 ### 4. Responsividade e Aprimoramento do Layout
 - **Problema:**  
-  O layout original não se adaptava a diferentes tamanhos de tela, comprometendo a experiência em dispositivos móveis.
+  Layout original não responsivo, comprometendo a experiência em dispositivos móveis.
 - **Solução:**  
-  Redesenho do layout utilizando frameworks e boas práticas de UI/UX para garantir uma interface responsiva e agradável.
+  O layout foi redesenhado para ser responsivo e intuitivo, melhorando a usabilidade em diferentes dispositivos.
 
 ### 5. Acessibilidade
 - **Problema:**  
-  Falta de diretrizes de acessibilidade, dificultando o uso por pessoas com necessidades especiais.
+  Falta de suporte a usuários com necessidades especiais.
 - **Solução:**  
-  Correção de elementos semânticos e implementação de atributos ARIA, melhorando a usabilidade para todos os usuários.
+  Foram implementadas melhorias de acessibilidade, como o uso adequado de `label`, atributos ARIA e uma navegação facilitada por teclado.
 
 ## Passos para Rodar o Projeto
 
-1. Clone o repositório:
+1. **Clone o Repositório:**
    ```bash
    git clone https://github.com/Vinis-vp/ead-05-vinicius.git
    cd ead-05-vinicius
    ```
-2. Abra o arquivo `index.html` no navegador para acessar a página inicial.
-3. Explore as demais páginas (Cadastro, Contato, etc.) e observe as melhorias implementadas.
+2. **Abra o Arquivo Inicial:**
+   - Execute o `index.html` em seu navegador para visualizar a página inicial.
+3. **Explore o Sistema:**
+   - Navegue pelas páginas de cadastro, contato e sobre para conferir as melhorias implementadas.
 
-## Problemas Encontrados e Justificativas para os Ajustes
+---
 
-### Uso Excessivo de Estilos Inline
-- **Problema:**  
-  Dificuldade de manutenção e escalabilidade do design.
-- **Justificativa:**  
-  Centralizar os estilos em `styles.css` facilita futuras modificações e a aplicação de temas.
-
-### Código Duplicado
-- **Problema:**  
-  Redundância que aumenta a probabilidade de erros e dificulta a manutenção.
-- **Justificativa:**  
-  Consolidar funções comuns em um único módulo melhora a legibilidade e a manutenibilidade do código.
-
-### Layout Desalinhado com Padrões Modernos
-- **Problema:**  
-  Interface desorganizada que compromete a experiência do usuário.
-- **Justificativa:**  
-  Adoção de um layout responsivo e intuitivo melhora significativamente a usabilidade do sistema.
-
-### Validações Ineficazes
-- **Problema:**  
-  Inserção de dados malformados e falta de feedback ao usuário.
-- **Justificativa:**  
-  Validações robustas garantem a integridade dos dados e proporcionam uma experiência de uso mais segura.
-
-### Acessibilidade
-- **Problema:**  
-  Falta de suporte para usuários com necessidades especiais.
-- **Justificativa:**  
-  A implementação de boas práticas de acessibilidade torna o sistema mais inclusivo e de fácil navegação para todos.
+Este README documenta as principais mudanças realizadas na refatoração, evidenciando os problemas do código original (branch **main**) e as melhorias implementadas na versão refatorada (branch **beta**). O objetivo é oferecer um sistema mais robusto, modular e preparado para futuras evoluções.
+```
