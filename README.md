@@ -27,16 +27,21 @@ Com a refatoração, os principais objetivos foram:
 ## 🗂 Estrutura de Pastas do Projeto
 
 ```
-├── README.md
-├── css
-    ├── sobre.css
-    └── styles.css
-├── index.html
-├── js
-    └── script.js
-└── paginas
-    ├── contato.html
-    └── sobre.html
+/assets
+  /css
+    styles.css
+  /img
+    (diretório vazio para futuras imagens)
+  /js
+    contato.js
+    home.js
+    script.js
+  /paginas
+    cadastro.html
+    contato.html
+    sobre.html
+    index.html
+README.md
 ```
 
 ## Comparação Entre Branches
